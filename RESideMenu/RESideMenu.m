@@ -26,6 +26,7 @@
 #import "RESideMenu.h"
 #import "UIViewController+RESideMenu.h"
 #import "RECommonFunctions.h"
+#import "RETouchPassingView.h"
 
 @interface RESideMenu ()
 
@@ -37,7 +38,7 @@
 @property (strong, readwrite, nonatomic) UIButton *contentButton;
 @property (strong, readwrite, nonatomic) UIView *menuViewContainer;
 @property (strong, readwrite, nonatomic) UIView *contentViewContainer;
-@property (strong, readwrite, nonatomic) UIView *contentTransformationViewContainer;
+@property (strong, readwrite, nonatomic) RETouchPassingView *contentTransformationViewContainer;
 @property (assign, readwrite, nonatomic) BOOL didNotifyDelegate;
 
 @end
@@ -206,7 +207,8 @@
     
     [self.view addSubview:self.backgroundImageView];
     [self.view addSubview:self.menuViewContainer];
-    self.contentTransformationViewContainer = [[UIView alloc] initWithFrame:self.view.bounds];
+    self.contentTransformationViewContainer = [[RETouchPassingView alloc] initWithFrame:self.view.bounds];
+    self.contentTransformationViewContainer.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     [self.view addSubview:self.contentTransformationViewContainer];
     [self.contentTransformationViewContainer addSubview:self.contentViewContainer];
     

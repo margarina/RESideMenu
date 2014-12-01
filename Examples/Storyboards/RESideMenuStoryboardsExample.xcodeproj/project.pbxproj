@@ -23,6 +23,7 @@
 		3076CE0E1809B5C500527E6C /* RESideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 3076CE0A1809B5C500527E6C /* RESideMenu.m */; };
 		3076CE0F1809B5C500527E6C /* UIViewController+RESideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 3076CE0C1809B5C500527E6C /* UIViewController+RESideMenu.m */; };
 		30DF13B218DE1B0C0018463C /* DEMORightMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 30DF13B118DE1B0C0018463C /* DEMORightMenuViewController.m */; };
+		BE95D6011A2CB9F700C4D051 /* RETouchPassingView.m in Sources */ = {isa = PBXBuildFile; fileRef = BE95D6001A2CB9F700C4D051 /* RETouchPassingView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,8 @@
 		3076CE0C1809B5C500527E6C /* UIViewController+RESideMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+RESideMenu.m"; sourceTree = "<group>"; };
 		30DF13B018DE1B0C0018463C /* DEMORightMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DEMORightMenuViewController.h; sourceTree = "<group>"; };
 		30DF13B118DE1B0C0018463C /* DEMORightMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DEMORightMenuViewController.m; sourceTree = "<group>"; };
+		BE95D5FF1A2CB9F700C4D051 /* RETouchPassingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RETouchPassingView.h; sourceTree = "<group>"; };
+		BE95D6001A2CB9F700C4D051 /* RETouchPassingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RETouchPassingView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +153,8 @@
 				3076CE0A1809B5C500527E6C /* RESideMenu.m */,
 				3076CE0B1809B5C500527E6C /* UIViewController+RESideMenu.h */,
 				3076CE0C1809B5C500527E6C /* UIViewController+RESideMenu.m */,
+				BE95D5FF1A2CB9F700C4D051 /* RETouchPassingView.h */,
+				BE95D6001A2CB9F700C4D051 /* RETouchPassingView.m */,
 			);
 			name = RESideMenu;
 			path = ../../RESideMenu;
@@ -227,6 +232,7 @@
 				3076CDD21809B47200527E6C /* DEMOAppDelegate.m in Sources */,
 				3076CE051809B59E00527E6C /* DEMOSecondViewController.m in Sources */,
 				30DF13B218DE1B0C0018463C /* DEMORightMenuViewController.m in Sources */,
+				BE95D6011A2CB9F700C4D051 /* RETouchPassingView.m in Sources */,
 				3076CE041809B59E00527E6C /* DEMORootViewController.m in Sources */,
 				3076CE0F1809B5C500527E6C /* UIViewController+RESideMenu.m in Sources */,
 				3076CE0E1809B5C500527E6C /* RESideMenu.m in Sources */,
