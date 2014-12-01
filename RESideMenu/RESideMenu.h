@@ -62,8 +62,12 @@
 @property (assign, readwrite, nonatomic) IBInspectable CGFloat contentViewShadowRadius;
 @property (assign, readwrite, nonatomic) IBInspectable CGFloat contentViewFadeOutAlpha;
 @property (assign, readwrite, nonatomic) IBInspectable CGFloat contentViewScaleValue;
+@property (assign, readwrite, nonatomic) IBInspectable CGFloat contentViewRotationValue;
+@property (assign, readwrite, nonatomic) IBInspectable CGFloat justMoveContentVisiblePartValue;
 @property (assign, readwrite, nonatomic) IBInspectable CGFloat contentViewInLandscapeOffsetCenterX;
 @property (assign, readwrite, nonatomic) IBInspectable CGFloat contentViewInPortraitOffsetCenterX;
+@property (assign, readwrite, nonatomic) IBInspectable CGFloat contentViewInLandscapeOffsetCenterY;
+@property (assign, readwrite, nonatomic) IBInspectable CGFloat contentViewInPortraitOffsetCenterY;
 @property (assign, readwrite, nonatomic) IBInspectable CGFloat parallaxMenuMinimumRelativeValue;
 @property (assign, readwrite, nonatomic) IBInspectable CGFloat parallaxMenuMaximumRelativeValue;
 @property (assign, readwrite, nonatomic) IBInspectable CGFloat parallaxContentMinimumRelativeValue;
