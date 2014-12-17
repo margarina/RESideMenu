@@ -43,6 +43,8 @@
 
 @end
 
+#define iOS8 (floor(NSFoundationVersionNumber) > NSFoundationVersionNumber_iOS_7_1)
+
 @implementation RESideMenu
 
 #pragma mark -
@@ -211,13 +213,20 @@
     self.contentTransformationViewContainer.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     [self.view addSubview:self.contentTransformationViewContainer];
     [self.contentTransformationViewContainer addSubview:self.contentViewContainer];
-    
-    if (self.scaleContentView)
+
+    if (iOS8)
     {
-        // Apply perspective.
-        CATransform3D perspective = CATransform3DIdentity;
-        perspective.m34 = 1.0 / - 1000.0;
-        self.contentViewContainer.superview.layer.sublayerTransform = perspective;
+        if (self.scaleContentView)
+        {
+            // Apply perspective.
+            CATransform3D perspective = CATransform3DIdentity;
+            perspective.m34 = 1.0 / - 1000.0;
+            self.contentViewContainer.superview.layer.sublayerTransform = perspective;
+        }
+    }
+    else
+    {
+        [self.view addSubview:self.contentViewContainer];
     }
     
     self.menuViewContainer.frame = self.view.bounds;
@@ -321,12 +330,23 @@
     
     [UIView animateWithDuration:self.animationDuration animations:^{
         if (self.scaleContentView) {
-            [self rotateAndScaleContentWithAngle:-self.contentViewRotationValue scale:self.contentViewScaleValue];
+            if (iOS8) {
+                [self rotateAndScaleContentWithAngle:-self.contentViewRotationValue scale:self.contentViewScaleValue];
+            } else {
+                self.contentViewContainer.transform = CGAffineTransformMakeScale(self.contentViewScaleValue, self.contentViewScaleValue);
+            }
         } else {
             self.contentViewContainer.transform = CGAffineTransformIdentity;
         }
         
-        [self moveCenterForShowingLeft:YES];
+        if (iOS8)
+        {
+            [self moveCenterForShowingLeft:YES];
+        }
+        else
+        {
+            self.contentViewContainer.center = CGPointMake((UIInterfaceOrientationIsLandscape([[UIApplication sharedApplication] statusBarOrientation]) ? self.contentViewInLandscapeOffsetCenterX + CGRectGetHeight(self.view.frame) : self.contentViewInPortraitOffsetCenterX + CGRectGetWidth(self.view.frame)), self.contentViewContainer.center.y);
+        }
 
         self.menuViewContainer.alpha = !self.fadeMenuView ?: 1.0f;
         self.contentViewContainer.alpha = self.contentViewFadeOutAlpha;
